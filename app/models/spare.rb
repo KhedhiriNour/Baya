@@ -1,0 +1,2 @@
+class Spare < Announcement
+end
