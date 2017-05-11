@@ -1,0 +1,45 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<p><%= current_user.first_name %></p>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+
+  <h1>Announcements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @announcements.each do |announcement| %>
+      <tr>
+        <td><%= announcement.name %></td>
+        <td><%= announcement.price %></td>
+        <td><%= announcement.description %></td>
+        <td><%= announcement.color %></td>
+        <td><%= announcement.km %></td>
+        <td><%= announcement.year %></td>
+        <td><%= announcement.type_id %></td>
+        <td><img src="<%= attachment_url(@announcement, :image) %>" alt=""></td>
+
+        <td><%= link_to 'Show', announcement %></td>
+        <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
+        <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+  <li>
+    <%= link_to('Register', new_user_registration_path)  %>
+  </li>
+  <li>
+    <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>

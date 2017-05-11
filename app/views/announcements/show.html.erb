@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>name:</strong>
+  <%= @announcement.name %>
+</p>
+
+<p>
+  <strong>price:</strong>
+  <%= @announcement.price %>
+</p>
+
+<p>
+  <strong>color</strong>
+  <%= @announcement.color %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @announcement.km %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @announcement.year %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @announcement.type_id %>
+</p>
+
+  <img src="<%= attachment_url(@announcement, :image) %>" alt="">
+
+
+
+
+
+<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
+<%= link_to 'Back', announcements_path %>
