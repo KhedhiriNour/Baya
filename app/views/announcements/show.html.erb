@@ -1,40 +1,24 @@
 <p id="notice"><%= notice %></p>
+ <div class="container">
+    <div class="row">
+         <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= attachment_url(@announcement, :image) %>" alt="">
+      <div class="caption">
+        <h3><%= @announcement.name %></h3>
+        <p>
+         price:<%= @announcement.price %> </br>
+          Descrption:<%= @announcement.description %> </br>
+          color: <%= @announcement.color %> </br>
+          kilometrage:  <%= @announcement.km %> </br>
+           année:  <%= @announcement.year %> </br>
+        </p>
+        <p>
+        <%= link_to 'Edit', edit_announcement_path(@announcement), :class => 'btn btn-primary' %>
+          </p>
+      </div>
+    </div>
+    </div>
+    </div>
 
-<p>
-  <strong>name:</strong>
-  <%= @announcement.name %>
-</p>
-
-<p>
-  <strong>price:</strong>
-  <%= @announcement.price %>
-</p>
-
-<p>
-  <strong>color</strong>
-  <%= @announcement.color %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @announcement.km %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @announcement.year %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @announcement.type_id %>
-</p>
-
-  <img src="<%= attachment_url(@announcement, :image) %>" alt="">
-
-
-
-
-
-<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
 <%= link_to 'Back', announcements_path %>

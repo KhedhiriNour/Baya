@@ -7,6 +7,7 @@ end
 
 gem 'devise'
 
+
 #refile
 gem 'sinatra', github: 'sinatra' #require master to get the rack >= 2.0
 gem 'refile', require: 'refile/rails', github: 'pgericson/refile', branch: 'stupid-hack-sinatra-version'
