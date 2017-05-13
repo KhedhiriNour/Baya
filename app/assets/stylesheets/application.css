@@ -119,6 +119,9 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+.masthead-brand {
+  color: #fff;
+}
 .cover-heading {
   color : #fff ;
 }
