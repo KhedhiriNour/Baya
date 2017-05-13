@@ -1,0 +1,11 @@
+<p>
+  A new comment was posted for your <%= link_to @announcement.name, @announcement %>:
+</p>
+<blockquote>
+  <em><%= @comment.content %></em>
+</blockquote>
+
+<p>
+  To reply to this comment, please visit the announcement page at:
+  <%= link_to "announcement page ", @announcement %>
+</p>

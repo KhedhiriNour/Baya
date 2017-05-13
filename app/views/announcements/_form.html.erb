@@ -35,6 +35,16 @@
     <%= f.number_field :km %>
   </div>
 
+  <div class="field" style="display : none;">
+    <%= f.label :user_id %> </br>
+    <%= f.number_field :user_id, :value => current_user.id %>
+  </div>
+
+  <div class="field" style="display : none;">
+    <%= f.label :email %> </br>
+    <%= f.text_field :email, :value => current_user.email %>
+  </div>
+
   <div class="field">
     <%= f.label :year %> </br>
     <%= f.date_field :year %>

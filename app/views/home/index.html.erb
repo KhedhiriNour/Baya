@@ -1,26 +1,47 @@
 
 
 <% if user_signed_in? %>
+ <div class="site-wrapper">
+
+      <div class="site-wrapper-inner" style="background-image: url(img/bg.jpg); border-radius:3%;">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+                       <a class="navbar-brand" style="padding:0px;" href="#"><img src="img/logo.jpg" height="48px" width="148px"></a>
+
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li class="active"><a href="./"><%= current_user.first_name %></a></li>
+                  <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                </ul>
+               
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Our Company</h1>
+            <p class="lead">Baya AUTOMOBILE is a company, multiservices automobiles.
+            In sales side, we expose vehicles , spares such as for cars, . . . .</p>
+
+
+        </div>
+
+      </div>
+
+    </div>
+</div>
+</div>
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-         <a class="navbar-brand" style="padding:0px;" href="#"><img src="img/logo.jpg" height="48px" width="148px"></a>
+          
+         <h3>Our Announcements </h3>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./"><%= current_user.first_name %></a></li>
-            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+        
       </div>
     </nav>
 
@@ -52,7 +73,7 @@
 <% else %>
  <div class="site-wrapper">
 
-      <div class="site-wrapper-inner">
+      <div class="site-wrapper-inner" style="background-image: url(img/bg.jpg); border-radius:3%;">
 
         <div class="cover-container">
 
