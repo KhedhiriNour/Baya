@@ -42,16 +42,6 @@ ActiveRecord::Schema.define(version: 20170513004324) do
     t.index ["announcement_id"], name: "index_comments_on_announcement_id"
   end
 
-  create_table "f_users", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

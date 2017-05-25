@@ -11,16 +11,16 @@
           <a class="navbar-brand" style="padding:0px;" href="#"><img src="img/logo.jpg" height="48px" width="148px"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./"><%= current_user.first_name %></a></li>
-            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-          </ul>
+           <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="/">Home</a></li>
+                  <li><%= link_to 'New Announcement', new_announcement_path %></li>
+                  <li class="active"><a href="./"><%= current_user.first_name %></a></li>
+                  <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
 
 
     <div class="container">
@@ -81,5 +81,3 @@
 </div>
 </div>
 <% end %>
-
-<%= link_to 'New Announcement', new_announcement_path %>

@@ -3,4 +3,5 @@ class Announcement < ApplicationRecord
   accepts_attachments_for :announcement_images, attachment: :photo
   attachment :image
   belongs_to :user
+  belongs_to :type
 end

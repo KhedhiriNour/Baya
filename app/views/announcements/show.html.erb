@@ -14,11 +14,13 @@
            année:  <%= @announcement.year %> </br>
         </p>
         <p>
-        <%= link_to 'Edit', edit_announcement_path(@announcement), :class => 'btn btn-primary' %>
+        <% if current_user.id == @announcement.user_id %>
+          <%= link_to 'Edit', edit_announcement_path(@announcement), :class => 'btn btn-primary' %>
+        <% end %>
           </p>
       </div>
     </div>
     </div>
     </div>
 
-<%= link_to 'Back', announcements_path %>
+<%= link_to 'Back', announcements_path , :class => 'btn btn-success' %>

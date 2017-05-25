@@ -19,20 +19,31 @@
     <%= f.label :description %> </br>
     <%= f.text_area :description %>
   </div>
-
   <div class="field">
-    <%= f.label :color %> </br>
-    <%= f.text_field :color %>
+    <%= f.label :type_id %> </br>
+    <%= f.collection_select(:type_id, Type.all, :id, :name ) %>
   </div>
+  
 
   <div class="field">
     <%= f.label :price %> </br>
     <%= f.number_field :price %>
   </div>
-
   <div class="field">
-    <%= f.label :km %> </br>
-    <%= f.number_field :km %>
+    <input type="radio" id="vehicle" name="vehicle" value="vehicle" onClick="show()" checked> Vehicule
+    <input type="radio" id="peice" name="vehicle" value="peiceauto" onClick="hide()" > pièce auto
+  </div>
+  
+
+  <div id="tohide">
+    <div class="field">
+      <%= f.label :km %> </br>
+      <%= f.number_field :km %>
+    </div>
+    <div class="field">
+      <%= f.label :color %> </br>
+      <%= f.text_field :color %>
+    </div>
   </div>
 
   <div class="field" style="display : none;">
@@ -49,11 +60,7 @@
     <%= f.label :year %> </br>
     <%= f.date_field :year %>
   </div>
-
-  <div class="field">
-    <%= f.label :type_id %> </br>
-    <%= f.number_field :type_id %>
-  </div>
+  
 
 <div class="field">
     <%= f.label :image %> </br> 
@@ -66,3 +73,12 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+  function hide() { 
+    $("#tohide").hide();
+  }
+  function show() {
+    $("#tohide").show();
+  }
+</script>

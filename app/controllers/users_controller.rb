@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user.is_admin == true
+      @users = User.all
+    else 
+      redirect_to root_path
+    end
   end
 
   # GET /users/1
@@ -14,17 +18,28 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    if current_user.is_admin == true
+      @user = User.new
+    else 
+      redirect_to root_path
+    end
+    
   end
 
   # GET /users/1/edit
   def edit
+    if current_user.is_admin == true
+     
+    else 
+      redirect_to root_path
+    end
   end
 
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    if current_user.is_admin == true
+      @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
@@ -35,6 +50,10 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    else 
+      redirect_to root_path
+    end
+   
   end
 
   # PATCH/PUT /users/1
@@ -66,7 +85,8 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
-
+    def set_admin
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:first_name, :last_name, :phone, :is_admin)
