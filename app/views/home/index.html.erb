@@ -5,15 +5,25 @@
 
       <div class="site-wrapper-inner" style="background-image: url(img/bg.jpg); border-radius:3%;">
 
-        <div class="cover-container">
+        <div class="container">
 
           <div class="masthead clearfix">
             <div class="inner">
-                       <a class="navbar-brand" style="padding:0px;" href="#"><h3 class="masthead-brand">Baya Automobile</h3></a>
+                        <div class="navbar-brand" style="padding:0px;" href="#"><img src="assets/bayalogo.jpg" height="78px" width="248px"></div>
+          </div>
+          </div>
+          <div class="cover-container">
 
+          <div class="masthead clearfix">
+          <div class="inner">
+                        
+          </div>
               <nav>
-                <ul class="nav masthead-nav">
+              <ul class="nav navbar-nav navbar-right">
+
                   <li class="active"><a href="#">Home</a></li>
+
+                   <li class=""><a href="users">Users</a></li>
                   <li><a href="announcements">announcements</a></li>
                   <li class="active"><a href="./"><%= current_user.first_name %></a></li>
                   <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
@@ -76,11 +86,19 @@
 
       <div class="site-wrapper-inner" style="background-image: url(img/bg.jpg); border-radius:3%;">
 
+        <div class="container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+                        <div class="navbar-brand" style="padding:0px;" href="#"><img src="assets/bayalogo.jpg" height="78px" width="248px"></div>
+          </div>
+          </div>
+
         <div class="cover-container">
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Baya Automobile</h3>
+             
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
@@ -107,3 +125,4 @@
 </div>
 </div>
 <% end %>
+

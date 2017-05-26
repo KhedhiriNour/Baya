@@ -198,6 +198,10 @@ body {
   position: relative;
   margin: auto;
 }
+.field .fields{
+   border: 2px solid red;
+    border-radius: 5px;
+}
 .avatar-upload {
   margin: auto;
   text-align: center;
